@@ -94,12 +94,12 @@
         />
   </configure>
 
-  <subscriber zcml:condition="installed plone.app.event"
+  <subscriber zcml:condition="installed zope.app.event"
       for="p4a.plonevideoembed.interfaces.IAnyVideoLinkCapable
            zope.app.event.interfaces.IObjectModifiedEvent"
       handler=".autoactivation_handler"
       />
-  <subscriber zcml:condition="not-installed plone.app.event"
+  <subscriber zcml:condition="not-installed zope.app.event"
       for="p4a.plonevideoembed.interfaces.IAnyVideoLinkCapable
            zope.lifecycleevent.interfaces.IObjectModifiedEvent"
       handler=".autoactivation_handler"
